@@ -45,7 +45,7 @@ class AvatarViewProvider implements vscode.WebviewViewProvider {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src ${webview.cspSource} blob: data:; style-src ${webview.cspSource} 'unsafe-inline'; script-src 'nonce-${nonce}';" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src ${webview.cspSource} blob: data:; style-src ${webview.cspSource} 'unsafe-inline'; script-src 'nonce-${nonce}'; connect-src ${webview.cspSource} https:;" />
     <title>Opencode Avatar</title>
     <style>
       html, body { height: 100%; width: 100%; margin: 0; padding: 0; overflow: hidden; background: transparent; }

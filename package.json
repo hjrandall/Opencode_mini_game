@@ -31,7 +31,8 @@
       "opencodeAvatar": [
         {
           "id": "opencodeAvatar.view",
-          "name": "Avatar"
+          "name": "Avatar",
+          "type": "webview"
         }
       ]
     },

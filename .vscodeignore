@@ -1,0 +1,6 @@
+**/*.ts
+**/*.map
+.vscode/**
+scripts/**
+webview/**
+node_modules/**

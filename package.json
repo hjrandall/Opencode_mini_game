@@ -1,0 +1,62 @@
+{
+  "name": "opencode-avatar-overlay",
+  "displayName": "Opencode Avatar Overlay",
+  "description": "VS Code side pane showing a 3D avatar (phase 1)",
+  "version": "0.0.1",
+  "publisher": "local",
+  "private": true,
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "onCommand:opencodeAvatar.show",
+    "onView:opencodeAvatar.view"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "opencodeAvatar",
+          "title": "Opencode",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "opencodeAvatar": [
+        {
+          "id": "opencodeAvatar.view",
+          "name": "Avatar"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "opencodeAvatar.show",
+        "title": "Opencode: Show Avatar"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p .",
+    "watch": "tsc -watch -p .",
+    "bundle-webview": "node scripts/bundle-webview.mjs",
+    "build": "npm run compile && npm run bundle-webview",
+    "package": "npm run build && npx --yes @vscode/vsce package --no-dependencies",
+    "dev:window": "code --extensionDevelopmentPath=\"$PWD\" --new-window"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/vscode": "^1.90.0",
+    "esbuild": "^0.27.2",
+    "typescript": "^5.6.0"
+  },
+  "dependencies": {
+    "three": "^0.161.0"
+  }
+}
